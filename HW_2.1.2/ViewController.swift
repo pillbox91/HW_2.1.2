@@ -11,22 +11,22 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var startButton: UIButton!
+    
     @IBOutlet weak var redColor: UIView!
     @IBOutlet weak var yellowColor: UIView!
     @IBOutlet weak var greenColor: UIView!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        redColor.layer.cornerRadius = redColor.frame.size.width/2
-        yellowColor.layer.cornerRadius = yellowColor.frame.size.width/2
-        greenColor.layer.cornerRadius = greenColor.frame.size.width/2
         
         redColor.alpha = 0.3
         yellowColor.alpha = 0.3
         greenColor.alpha = 0.3
+    }
+    override func viewWillLayoutSubviews() {
+        redColor.layer.cornerRadius = redColor.frame.size.width/2
+        yellowColor.layer.cornerRadius = yellowColor.frame.size.width/2
+        greenColor.layer.cornerRadius = greenColor.frame.size.width/2
     }
     
     @IBAction func startButtonpressed() {
